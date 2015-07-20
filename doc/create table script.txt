@@ -1,0 +1,169 @@
+
+DROP TABLE `job`;
+
+DROP TABLE `jobstate`;
+
+DROP TABLE `member`;
+
+DROP TABLE `period`;
+
+DROP TABLE `modules`;
+
+DROP TABLE `project`;
+
+DROP TABLE `lisenceinfo`;
+
+DROP TABLE `userinfo`;
+
+DROP TABLE `organizations`;
+
+CREATE TABLE `job`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`jobname`              VARCHAR(20) NULL,
+	`estimatestarttime`    DATE NULL,
+	`estimateendtime`      DATE NULL,
+	`estimateworkingtime`  INTEGER NULL,
+	`realstarttime`        DATE NULL,
+	`realendtime`          DATE NULL,
+	`realworkingtime`      INTEGER NULL,
+	`desc`                 VARCHAR(200) NULL,
+	`module_sid`           INTEGER NULL,
+	`project_sid`          INTEGER NULL,
+	`iteration_sid`        INTEGER NULL,
+	`functionary_sid`      INTEGER NULL,
+	`state_sid`            INTEGER NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `jobstate`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`statecode`            CHAR(2) NULL,
+	`statename`            VARCHAR(20) NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `lisenceinfo`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`user_sid`             INTEGER NULL,
+	`org_sid`              INTEGER NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `member`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`project_sid`          INTEGER NULL,
+	`name`                 VARCHAR(20) NULL,
+	`sex`                  CHAR(1) NULL,
+	`email`                VARCHAR(40) NULL,
+	`telephone`            VARCHAR(20) NULL,
+	`mobilephone`          VARCHAR(20) NULL,
+	`qq`                   VARCHAR(20) NULL,
+	`weixin`               VARCHAR(20) NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `modules`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`modulename`           VARCHAR(40) NULL,
+	`desc`                 VARCHAR(400) NULL,
+	`projectsid`           INTEGER NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `organizations`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`org_name`             VARCHAR(40) NULL,
+	`homepage`             VARCHAR(40) NULL,
+	`org_addr`             VARCHAR(80) NULL,
+	`telephone`            VARCHAR(40) NULL,
+	`org_email`            VARCHAR(40) NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `period`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`projectsid`           INTEGER NULL,
+	`sequence`             VARCHAR(20) NULL,
+	`iterationname`        VARCHAR(40) NULL,
+	`starttime`            DATE NULL,
+	`endtime`              DATE NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `project`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`projectcode`          VARCHAR(30) NULL,
+	`projectname`          VARCHAR(40) NULL,
+	`user_sid`             INTEGER NULL,
+	`org_sid`              INTEGER NULL,
+	`starttime`            DATE NULL,
+	`endtime`              DATE NULL,
+	`desc`                 VARCHAR(400) NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `userinfo`
+(
+	`sid`                  INTEGER unsigned NOT NULL AUTO_INCREMENT,
+	`username`             VARCHAR(40) NULL,
+	`passoword`            VARCHAR(40) NULL,
+	`email`                VARCHAR(40) NULL,
+	`nickname`             VARCHAR(40) NULL,
+	`org_sid`              INTEGER NULL,
+	`phone`                VARCHAR(30) NULL,
+	`created_by`           INTEGER NULL,
+	`created_dt`           TIMESTAMP NULL,
+	`updated_by`           INTEGER NULL,
+	`updated_dt`           TIMESTAMP NULL,
+	`version`              INTEGER NULL,
+	PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

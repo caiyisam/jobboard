@@ -1,0 +1,6 @@
+<sitemesh>
+	<content-processor>
+		<tag-rule-bundle class="com.piapia.content.tagrules.ExtPiaPiaTagRuleBundle" />
+	</content-processor>
+	<mapping path="/bizcell/*" decorator="/template/decorator.jsp" />
+</sitemesh>

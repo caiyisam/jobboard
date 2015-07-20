@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+		
+	<!-- C3P0 数据源 
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="org.postgresql.Driver" />
+		<property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/iddd" />
+		<property name="properties">
+			<props>
+				<prop key="user">xxxxx</prop>
+				<prop key="password">${xxxxx}</prop>
+			</props>
+		</property>
+	</bean>
+	-->
+ 
+	<bean id="dataSource" class="com.p6spy.engine.spy.P6DataSource">
+		<constructor-arg>
+			<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+				<property name="driverClassName">
+					<value>${jdbc_mysql.driverClassName}</value>
+				</property>
+				<property name="url">
+					<value>${jdbc_mysql.url}</value>
+				</property>
+				<property name="username">
+					<value>${jdbc_mysql.username}</value>
+				</property>
+				<property name="password">
+					<value>${jdbc_mysql.password}</value>
+				</property>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+</beans>

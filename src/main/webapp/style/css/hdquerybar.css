@@ -1,0 +1,41 @@
+.hayden_query_toolbar ul,.hayden_query_toolbar li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.hayden_query_toolbar li {
+    float: left;
+}
+.hayden_query_toolbar{
+    word-break: break-all;
+    overflow :hidden;
+    cursor:pointer;
+}
+#hayden_open_a:hover,#hayden_open_a_2:hover {
+    background-image: url(../images/hdquerybar/m1.png);
+}
+
+#hayden_open_a:link,#hayden_open_a_2:link,#hayden_open_a:visited,#hayden_open_a_2:visited {
+    display: block;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    text-indent: -99px;
+    background-image: url(../images/hdquerybar/m1.png);
+    text-decoration:none;
+}
+
+#hayden2_querybar_button_query:hover {
+    background-image: url(../images/hdquerybar/icon_search.jpg);
+}
+
+#hayden2_querybar_button_query:link,#hayden2_querybar_button_query:visited {
+    display: block;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    text-indent: -99px;
+    background-image: url(../images/hdquerybar/icon_search.jpg);
+    text-decoration:none;
+}

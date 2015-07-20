@@ -1,0 +1,47 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet id="1.0.0" author="dongheng">
+		<createTable tableName="report_week">
+			<column name="sid" type="int(11)" autoIncrement="true" startWith="1">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="contractor" type="varchar2(60)">
+				<constraints nullable="false" />
+			</column>
+			<column name="projectid" type="varchar2(60)">
+				<constraints nullable="false" />
+			</column>
+			<column name="projectname" type="varchar2(60)">
+				<constraints nullable="false" />
+			</column>
+			<column name="startdate" type="date" />
+			<column name="enddate" type="date" />
+			<column name="projectstatus" type="varchar2(30)" />
+			<column name="workcontent" type="varchar2(400)" />
+			<column name="followingplan" type="varchar2(400)" />
+			<column name="problemanalysis" type="varchar2(400)" />
+			<column name="riskandsolutions" type="varchar2(400)" />
+			<column name="extension1" type="varchar2(400)" />
+			<column name="extension2" type="varchar2(400)" />
+			<column name="extension3" type="varchar2(400)" />
+			<column name="extension4" type="varchar2(400)" />
+			<column name="extension5" type="varchar2(400)" />
+			<column name="extension6" type="varchar2(400)" />
+			<column name="extension7" type="varchar2(400)" />
+			<column name="extension8" type="varchar2(400)" />
+			<column name="extension9" type="varchar2(400)" />
+			<column name="extension10" type="varchar2(400)" />
+			<column name="created_by" type="int(11)" />
+			<column name="created_dt" type="datetime" />
+			<column name="updated_by" type="int(11)" />
+			<column name="updated_dt" type="datetime" />
+			<column name="version" type="int(11)" />
+		</createTable>
+		<rollback>
+			drop table report_week;
+		</rollback>
+	</changeSet>
+
+</databaseChangeLog>
